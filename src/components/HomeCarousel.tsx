@@ -20,7 +20,7 @@ export function HomeCarousel() {
               width={undefined}
               height={undefined}
               alt='carousel-picture'
-              className='w-screen h-screen'
+              className='w-screen h-screen object-cover'
             />
           </div>
         )

@@ -9,8 +9,8 @@ export const slick_data = {
     infinite: true,
     speed: 2000,
     slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true
+    autoplay: true,
+    autoplaySpeed: 5000
   },
   imagesAry: [
     homeCarouselFirst,
