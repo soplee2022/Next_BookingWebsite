@@ -8,9 +8,9 @@ export default function Home() {
       <HomeCarousel />
 
       <div className='w-full h-screen flex justify-center items-center absolute top-0 left-0 py-[109px]'>
-        <div className='container flex justify-between h-full'>
+        <div className='container flex justify-between'>
           {/* 左邊文字區塊 */}
-          <div className='flex mr-[30px] flex-col justify-between flex-shrink-0'>
+          <div className='flex mr-[30px] flex-col justify-between flex-shrink-0 space-y-[185px]'>
             <Image src={logo} alt='logo' />
             <div className='text-xs text-white'>
               <h3 className='mb-4'>好室旅店。HOUSE HOTEL</h3>
