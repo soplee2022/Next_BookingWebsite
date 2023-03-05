@@ -1,0 +1,15 @@
+.ant-modal-content {
+  border-radius: 0 !important;
+padding: 0 !important;
+}
+
+.ant-btn-default {
+  display: none;
+}
+
+.ant-btn-primary {
+  background-color: #38470b;
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid white;
+}

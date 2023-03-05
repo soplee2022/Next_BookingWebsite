@@ -21,7 +21,12 @@ module.exports = {
         'lg': '1366px',
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        'primary': '#38470B',
+        "light-primary": "#949C7C"
+      },
+    },
   },
   plugins: [],
 }

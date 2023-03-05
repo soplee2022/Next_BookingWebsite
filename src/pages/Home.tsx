@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { HomeCarousel } from '../components/HomeCarousel'
+import { HomeCarousel } from '../components/home/HomeCarousel'
 import logo from '../../public/logo.svg'
 
 export default function Home() {
