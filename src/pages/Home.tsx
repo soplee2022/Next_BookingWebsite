@@ -1,8 +1,33 @@
 import Image from 'next/image'
 import { HomeCarousel } from '../components/HomeCarousel'
 import logo from '../../public/logo.svg'
+import { GetStaticProps } from "next";
+import { URL } from '@/api/HomePage'
 
-export default function Home() {
+
+interface HomePageProps {
+  "id" : string,
+  "imageUrl" : string,
+  "normalDayPrice": number,
+  "holidayPrice" : number,
+  "name" : string
+}
+
+interface data {
+  data:HomePageProps[];
+}
+
+export const getStaticProps: GetStaticProps = async ()=> {
+  const res = await fetch(URL);
+  const data:data = await res.json();
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default function Home({ data }: data) {
   return (
     <div className='relative'>
       <HomeCarousel />
@@ -11,7 +36,7 @@ export default function Home() {
         <div className='container flex justify-between h-full'>
           {/* 左邊文字區塊 */}
           <div className='flex mr-[30px] flex-col justify-between flex-shrink-0'>
-            <Image src={logo} alt='logo' />
+            <Image src={logo} alt='logo' width={144} height={258} priority/>
             <div className='text-xs text-white'>
               <h3 className='mb-4'>好室旅店。HOUSE HOTEL</h3>
               <ul className='flex flex-col space-y-[6px] font-light'>
@@ -22,6 +47,18 @@ export default function Home() {
             </div>
           </div>
           {/* 右邊房型區塊 */}
+          {/* 會報錯：無法讀取 map -> 如何 console */}
+          {/* <ul>
+            {data.map((item:HomePageProps) => {
+              return (
+                <>
+                  <li>
+                    <Image src={item.imageUrl} alt='Room images' width={275} height={275}></Image>
+                  </li>
+                </>
+              )
+          })}
+          </ul> */}
           {/* <RoomList data={data}/> */}
         </div>
       </div>
